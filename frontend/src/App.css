@@ -1,0 +1,308 @@
+/* Windows Explorer App Styles */
+.App {
+  text-align: center;
+}
+
+/* Custom Explorer Styling */
+.explorer-window {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  font-family: 'Segoe UI', 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.explorer-toolbar {
+  background: linear-gradient(to bottom, #ffffff, #f1f5f9);
+  border-bottom: 1px solid #e1e5e9;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.explorer-main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.explorer-sidebar {
+  width: 250px;
+  background: #f8f9fa;
+  border-right: 1px solid #e1e5e9;
+  overflow-y: auto;
+}
+
+.explorer-content {
+  flex: 1;
+  background: white;
+  overflow-y: auto;
+}
+
+.explorer-tree {
+  padding: 8px 0;
+}
+
+.explorer-tree-node {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.explorer-tree-node:hover {
+  background-color: #e8e8e8;
+}
+
+.explorer-tree-node.selected {
+  background-color: #cce8ff;
+  color: #0078d4;
+}
+
+.explorer-tree-node.expanded {
+  font-weight: 500;
+}
+
+.explorer-tree-children {
+  margin-left: 16px;
+  border-left: 1px solid #e1e5e9;
+}
+
+.explorer-file-grid {
+  display: grid;
+  grid-template-columns: 1fr 120px 80px 80px;
+  gap: 8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f1f1;
+  font-size: 13px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.explorer-file-grid:hover {
+  background-color: #f8f9fa;
+}
+
+.explorer-file-grid.selected {
+  background-color: #cce8ff;
+}
+
+.explorer-file-grid.header {
+  background-color: #f5f5f5;
+  font-weight: 600;
+  cursor: default;
+  border-bottom: 1px solid #e1e5e9;
+}
+
+.explorer-file-grid.header:hover {
+  background-color: #f5f5f5;
+}
+
+.explorer-file-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+
+.explorer-file-name span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.explorer-breadcrumb {
+  background: white;
+  border-bottom: 1px solid #e1e5e9;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.explorer-breadcrumb-item {
+  color: #0078d4;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.explorer-breadcrumb-item:hover {
+  text-decoration: underline;
+}
+
+.explorer-breadcrumb-separator {
+  color: #666;
+  margin: 0 4px;
+}
+
+.explorer-status-bar {
+  background: #f5f5f5;
+  border-top: 1px solid #e1e5e9;
+  padding: 4px 12px;
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.explorer-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.explorer-folder-icon {
+  color: #fbbf24;
+}
+
+.explorer-file-icon {
+  color: #3b82f6;
+}
+
+.explorer-search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px 8px;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.explorer-search-box input {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 13px;
+}
+
+.explorer-button {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 13px;
+}
+
+.explorer-button:hover {
+  background-color: #e8e8e8;
+}
+
+.explorer-button:active {
+  background-color: #d1d5db;
+}
+
+.explorer-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+  font-size: 14px;
+}
+
+.explorer-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #dc2626;
+  font-size: 14px;
+  text-align: center;
+}
+
+.explorer-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .explorer-sidebar {
+    width: 200px;
+  }
+  
+  .explorer-file-grid {
+    grid-template-columns: 1fr 100px 70px 70px;
+    font-size: 12px;
+  }
+  
+  .explorer-toolbar {
+    padding: 6px 8px;
+  }
+}
+
+/* Focus states for accessibility */
+.explorer-tree-node:focus,
+.explorer-file-grid:focus,
+.explorer-breadcrumb-item:focus {
+  outline: 2px solid #0078d4;
+  outline-offset: 2px;
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .explorer-window {
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .explorer-sidebar {
+    background-color: #252526;
+    border-right-color: #3e3e42;
+  }
+  
+  .explorer-content {
+    background-color: #1e1e1e;
+  }
+  
+  .explorer-toolbar {
+    background: linear-gradient(to bottom, #2d2d30, #252526);
+    border-bottom-color: #3e3e42;
+  }
+  
+  .explorer-tree-node:hover {
+    background-color: #2a2d2e;
+  }
+  
+  .explorer-file-grid:hover {
+    background-color: #2a2d2e;
+  }
+  
+  .explorer-breadcrumb {
+    background-color: #1e1e1e;
+    border-bottom-color: #3e3e42;
+  }
+  
+  .explorer-status-bar {
+    background-color: #007acc;
+    border-top-color: #3e3e42;
+    color: #ffffff;
+  }
+}
