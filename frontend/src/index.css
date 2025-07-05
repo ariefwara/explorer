@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Explorer specific styles */
+.explorer-tree-item {
+  @apply flex items-center py-1 px-2 hover:bg-explorer-hover cursor-pointer select-none;
+}
+
+.explorer-tree-item.selected {
+  @apply bg-explorer-selected;
+}
+
+.explorer-file-item {
+  @apply flex items-center p-2 hover:bg-explorer-hover cursor-pointer select-none border-b border-gray-100;
+}
+
+.explorer-file-item.selected {
+  @apply bg-explorer-selected;
+}
+
+.explorer-icon {
+  @apply w-4 h-4 mr-2 flex-shrink-0;
+}
+
+.explorer-folder-icon {
+  @apply w-4 h-4 mr-1 flex-shrink-0 text-yellow-600;
+}
+
+.explorer-file-icon {
+  @apply w-4 h-4 mr-1 flex-shrink-0 text-blue-600;
+}
+
+/* Prevent text selection on UI elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
